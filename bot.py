@@ -48,7 +48,7 @@ async def __hello(ctx):
 
 
 @client.command(aliases=["hakka"])
-async def __hello(ctx):
+async def __hakka(ctx):
     await ctx.send("It's 'Hacker' not 'Hakka'")
 
 
