@@ -8,7 +8,7 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 intents = discord.Intents.default()
 intents.members = True
-client = commands.Bot(command_prefix=".", intents=intents, help_command=None)
+client = commands.Bot(command_prefix=".", intents=intents)
 
 
 def get_quote():
@@ -57,6 +57,12 @@ async def __invite(ctx):
     await ctx.send(
         "<https://discord.com/api/oauth2/authorize?client_id=919592181038190633&permissions=2147732544&scope=bot>"
     )
+
+
+@client.command(aliases=["echo", "say"])
+async def __echo(ctx, *args):
+    msg = " ".join(args)
+    await ctx.send(msg)
 
 
 @client.event
